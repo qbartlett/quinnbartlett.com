@@ -24,53 +24,46 @@
 
   <main class="page">
 
-    <!-- HERO: the first thing visitors see -->
-    <section class="hero">
-      <p class="eyebrow">Welcome</p>
-      <h1>Hi, I'm Quinn Bartlett.</h1>
-      <p class="lead">
-        Business administration and operations specialist. I've built and run a
-        commercial brewery from corporate strategy through fundraising,
-        construction, and regulatory approval.
-      </p>
-      <div class="button-row">
-        <a class="button" href="resume.html">View my resume</a>
-        <a class="button button-secondary" href="about.html">About me</a>
+    <!-- HERO: intro text plus headshot -->
+    <section class="hero hero-split">
+      <div>
+        <p class="eyebrow">Welcome</p>
+        <h1>Hi, I'm Quinn Bartlett.</h1>
+        <p class="lead">
+          Business operator and brewer. I've built and run a commercial brewery
+          from corporate strategy through fundraising, construction, and
+          regulatory approval.
+        </p>
+        <div class="button-row">
+          <a class="button" href="experience.html">See my work</a>
+          <a class="button button-secondary" href="resume.html">View my resume</a>
+        </div>
       </div>
+      <!-- Replace images/headshot.svg with your photo (for example images/headshot.jpg) and update src and alt -->
+      <img class="photo photo-square hero-photo" src="images/headshot.svg" alt="Portrait of Quinn Bartlett" width="800" height="800">
     </section>
 
-    <!-- CARDS: shortcuts to the other pages -->
+    <!-- FEATURED: one highlight that leads into the Experience page -->
     <section>
-      <h2>Explore</h2>
-      <div class="cards">
-        <a class="card" href="about.html">
-          <h3>About</h3>
-          <p>Who I am, how I work, and my background in competitive swimming.</p>
-        </a>
-        <a class="card" href="resume.html">
-          <h3>Resume</h3>
-          <p>A concise summary of my skills, education, and career.</p>
-        </a>
-        <a class="card" href="experience.html">
-          <h3>Experience</h3>
-          <p>A closer look at my roles at Rockmill, Hoster, and Buzzsaw Brewing.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section>
-      <h2>Get in touch</h2>
-      <p>
-        <a href="mailto:quinnbartlett@gmail.com">quinnbartlett@gmail.com</a>
-        &middot; Columbus, OH
-      </p>
+      <h2>Featured</h2>
+      <a class="featured" href="experience.html#buzzsaw">
+        <img src="images/buzzsaw-buildout.svg" alt="Buzzsaw Brewing during its build-out" width="1200" height="800">
+        <div class="featured-body">
+          <h3>Building Buzzsaw Brewing</h3>
+          <p>
+            How I took a brewery from corporate strategy and a capital raise
+            through construction and permitting to daily operation.
+          </p>
+          <span class="more">Read the story &rarr;</span>
+        </div>
+      </a>
     </section>
 
   </main>
 
   <!-- SHARED FOOTER -->
   <footer class="site-footer">
+    <p><a href="mailto:quinnbartlett@gmail.com">quinnbartlett@gmail.com</a> &middot; Columbus, OH</p>
     <p>&copy; 2026 Quinn Bartlett</p>
   </footer>
 

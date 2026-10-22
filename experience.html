@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience | Quinn Bartlett</title>
-  <meta name="description" content="Work experience of Quinn Bartlett at Rockmill Brewery, Hoster Brewing Company, and Buzzsaw Brewing.">
+  <meta name="description" content="A visual look at the work of Quinn Bartlett at Rockmill Brewery, Hoster Brewing Company, and Buzzsaw Brewing.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,73 +25,97 @@
 
     <h1 class="page-title">Experience</h1>
     <p class="lead">
-      The resume page is the short version. Here is what each role involved.
+      The <a href="resume.html">resume</a> has the dates and details. This page
+      is the work itself.
     </p>
 
-    <section>
+    <!-- Each venture: heading, one short story, photos with captions, a few key facts.
+         TODO (Quinn): swap the placeholder photos and add numbers you're proud of. -->
 
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Brewer &amp; Business Management Specialist, Rockmill Brewery</h3>
-          <span class="dates">Oct 2024 &ndash; Present</span>
-        </div>
-        <ul>
-          <li>Directed end-to-end operational management and supervised all primary production processes across the facility.</li>
-          <li>Developed strategic fundraising plans and investor offering frameworks to drive capital acquisition and growth initiatives.</li>
-          <li>Managed regulatory compliance, navigating complex state and federal liquor permitting and licensing requirements.</li>
-        </ul>
-        <ul class="skills">
-          <li>Operations</li>
-          <li>Fundraising</li>
-          <li>Regulatory compliance</li>
-          <li>Production</li>
-        </ul>
-      </article>
+    <section class="venture" id="rockmill">
+      <h2>Rockmill Brewery</h2>
+      <p class="venture-meta">Brewer &amp; Business Management Specialist &middot; Oct 2024 &ndash; present</p>
+      <p>
+        At Rockmill I work both sides of the business. I supervise production
+        across the facility, and I handle the business side: fundraising plans,
+        investor offering frameworks, and state and federal liquor permitting
+        and licensing.
+      </p>
+      <div class="gallery">
+        <figure>
+          <img src="images/rockmill-production.svg" alt="The production floor at Rockmill Brewery" width="1200" height="800">
+          <figcaption>On the production floor</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rockmill-brewing.svg" alt="Brewing at Rockmill Brewery" width="1200" height="800">
+          <figcaption>Brewing at Rockmill</figcaption>
+        </figure>
+      </div>
+      <ul class="facts">
+        <li><strong>Focus:</strong> operations, fundraising, compliance</li>
+      </ul>
+    </section>
 
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Brewer, Hoster Brewing Company</h3>
-          <span class="dates">Jan 2024 &ndash; Sep 2024</span>
-        </div>
-        <ul>
-          <li>Managed production operations across multi-scale facility environments (1 BBL, 5 BBL, and 15 BBL), ensuring precise execution of standard operating procedures.</li>
-          <li>Administered quality control to guarantee product consistency, safety standards, and batch predictability.</li>
-          <li>Collaborated with leadership on product planning, administrative documentation, and continuous process optimization.</li>
-        </ul>
-        <ul class="skills">
-          <li>Production</li>
-          <li>QA/QC</li>
-          <li>SOPs</li>
-          <li>Process optimization</li>
-        </ul>
-      </article>
+    <section class="venture" id="hoster">
+      <h2>Hoster Brewing Company</h2>
+      <p class="venture-meta">Brewer &middot; Jan 2024 &ndash; Sep 2024</p>
+      <p>
+        At Hoster I brewed across three scales of equipment, following
+        standard operating procedures closely and running quality control so
+        every batch was consistent and safe. I also worked with leadership on
+        product planning and documentation.
+      </p>
+      <div class="gallery">
+        <figure>
+          <img src="images/hoster-brewhouse.svg" alt="The brewhouse at Hoster Brewing Company" width="1200" height="800">
+          <figcaption>The brewhouse</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hoster-quality.svg" alt="Quality control work at Hoster Brewing Company" width="1200" height="800">
+          <figcaption>Quality control</figcaption>
+        </figure>
+      </div>
+      <ul class="facts">
+        <li><strong>Systems:</strong> 1, 5, and 15 BBL</li>
+      </ul>
+    </section>
 
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Owner &amp; Brewer, Buzzsaw Brewing</h3>
-          <span class="dates">Feb 2021 &ndash; Dec 2023</span>
-        </div>
-        <ul>
-          <li>Directed end-to-end administration and business operations for a commercial enterprise, steering the company from initial corporate strategy through capital execution.</li>
-          <li>Structured private equity offerings, authored business presentations, and managed investor relations to secure growth capital.</li>
-          <li>Oversaw full regulatory compliance, leading all interactions with municipal planning boards, state licensing agencies, and federal regulators (TTB).</li>
-          <li>Managed project build-out and facility construction, directing contractors, enforcing schedules, and maintaining budget adherence.</li>
-          <li>Administered day-to-day business finances, supply chain logistics, inventory scheduling, vendor contracts, and client accounts using QuickBooks.</li>
-        </ul>
-        <ul class="skills">
-          <li>Entity setup</li>
-          <li>Investor relations</li>
-          <li>Construction management</li>
-          <li>Permitting</li>
-          <li>QuickBooks</li>
-        </ul>
-      </article>
-
+    <section class="venture" id="buzzsaw">
+      <h2>Buzzsaw Brewing</h2>
+      <p class="venture-meta">Owner &amp; Brewer &middot; Feb 2021 &ndash; Dec 2023</p>
+      <p>
+        Buzzsaw was my own company. I set it up, structured the private equity
+        offering, wrote the business presentations, and managed investor
+        relations to raise growth capital. I led every conversation with the
+        municipal planning board, state licensing agencies, and the TTB, and I
+        managed the facility build-out: directing contractors, holding
+        schedules, and keeping to budget. Then I ran it, including finances,
+        supply chain, inventory, and vendor contracts.
+      </p>
+      <div class="gallery">
+        <figure class="wide">
+          <img src="images/buzzsaw-buildout.svg" alt="Buzzsaw Brewing during its build-out" width="1200" height="800">
+          <figcaption>The build-out in progress</figcaption>
+        </figure>
+        <figure>
+          <img src="images/buzzsaw-before.svg" alt="The Buzzsaw space before construction" width="1200" height="800">
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure>
+          <img src="images/buzzsaw-after.svg" alt="The finished Buzzsaw Brewing facility" width="1200" height="800">
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+      <ul class="facts">
+        <li><strong>Role:</strong> owner and brewer</li>
+        <li><strong>Permits:</strong> municipal, state, and federal (TTB)</li>
+      </ul>
     </section>
 
   </main>
 
   <footer class="site-footer">
+    <p><a href="mailto:quinnbartlett@gmail.com">quinnbartlett@gmail.com</a> &middot; Columbus, OH</p>
     <p>&copy; 2026 Quinn Bartlett</p>
   </footer>
 
