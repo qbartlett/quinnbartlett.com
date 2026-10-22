@@ -3,87 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Curriculum Vitae</title>
+  <title>Your Name | Home</title>
   <meta name="description" content="Short description of who you are and what you do.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER: your name, title, and contact links -->
-  <header class="header">
-    <h1>Your Name</h1>
-    <p class="tagline">Your professional title or a one-line description</p>
-    <nav class="contact">
-      <a href="mailto:you@example.com">you@example.com</a>
-      <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-      <a href="#">City, State</a>
-    </nav>
+  <!-- SHARED HEADER: this block is repeated on every page -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="page">
 
-    <!-- ABOUT -->
-    <section>
-      <h2>About</h2>
-      <p>
-        Write two or three sentences about who you are, what you do, and what
-        you care about. Keep it conversational. This is the first thing people read.
+    <!-- HERO: the first thing visitors see -->
+    <section class="hero">
+      <p class="eyebrow">Welcome</p>
+      <h1>Hi, I'm Your Name.</h1>
+      <p class="lead">
+        Your professional title or a one-line description of what you do and
+        who you do it for.
       </p>
+      <div class="button-row">
+        <a class="button" href="resume.html">View my resume</a>
+        <a class="button button-secondary" href="about.html">About me</a>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- CARDS: shortcuts to the other pages -->
     <section>
-      <h2>Experience</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Job Title, Company Name</h3>
-          <span class="dates">2022 &ndash; Present</span>
-        </div>
-        <ul>
-          <li>What you did or achieved, ideally with a result or number.</li>
-          <li>Another accomplishment or responsibility.</li>
-          <li>One more, if it matters.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Previous Job Title, Company Name</h3>
-          <span class="dates">2019 &ndash; 2022</span>
-        </div>
-        <ul>
-          <li>What you did or achieved.</li>
-          <li>Another accomplishment or responsibility.</li>
-        </ul>
-      </article>
+      <h2>Explore</h2>
+      <div class="cards">
+        <a class="card" href="about.html">
+          <h3>About</h3>
+          <p>Who I am, what drives me, and what I do outside of work.</p>
+        </a>
+        <a class="card" href="resume.html">
+          <h3>Resume</h3>
+          <p>A concise summary of my education, skills, and background.</p>
+        </a>
+        <a class="card" href="experience.html">
+          <h3>Experience</h3>
+          <p>A closer look at my roles, projects, and results.</p>
+        </a>
+      </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- CONTACT -->
     <section>
-      <h2>Education</h2>
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Degree, School Name</h3>
-          <span class="dates">2015 &ndash; 2019</span>
-        </div>
-      </article>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>Skill one</li>
-        <li>Skill two</li>
-        <li>Skill three</li>
-        <li>Skill four</li>
-      </ul>
+      <h2>Get in touch</h2>
+      <p>
+        <a href="mailto:you@example.com">you@example.com</a> &middot;
+        <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+      </p>
     </section>
 
   </main>
 
-  <footer class="footer">
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer">
     <p>&copy; 2026 Your Name</p>
   </footer>
 

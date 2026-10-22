@@ -1,11 +1,13 @@
 /* ---------- Settings you can change easily ---------- */
 :root {
   --text: #1f2933;          /* main text color */
-  --muted: #62707d;         /* secondary text (dates, tagline) */
-  --accent: #2563eb;        /* links and headings accent */
+  --muted: #62707d;         /* secondary text (dates, subtitles) */
+  --accent: #2563eb;        /* links, buttons, headings accent */
+  --accent-dark: #1d4ed8;   /* button hover */
   --background: #ffffff;    /* page background */
+  --surface: #f6f8fa;       /* card background */
   --line: #e4e7eb;          /* thin divider lines */
-  --max-width: 720px;       /* how wide the content column is */
+  --max-width: 760px;       /* how wide the content column is */
 }
 
 /* ---------- Base styles ---------- */
@@ -15,44 +17,11 @@
 
 body {
   margin: 0;
-  padding: 0 1.25rem;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text);
   background: var(--background);
-}
-
-/* Keep everything in a centered column */
-.header,
-main,
-.footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-/* ---------- Header ---------- */
-.header {
-  padding: 3rem 0 1.5rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.25rem;
-  line-height: 1.2;
-}
-
-.tagline {
-  margin: 0.25rem 0 1rem;
-  color: var(--muted);
-  font-size: 1.15rem;
-}
-
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
 }
 
 a {
@@ -64,9 +33,149 @@ a:hover {
   text-decoration: underline;
 }
 
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+/* ---------- Shared header and navigation ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* The page you're currently on is highlighted */
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Page layout ---------- */
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 1rem;
+}
+
+.page-title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+}
+
+.page-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.page-title-row .page-title {
+  margin: 0;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+/* ---------- Home page hero ---------- */
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2.75rem;
+}
+
+.hero .lead {
+  max-width: 34rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- Buttons ---------- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.button-secondary:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 /* ---------- Sections ---------- */
 section {
-  padding: 1.75rem 0 0.5rem;
+  padding: 1.5rem 0 0.5rem;
 }
 
 h2 {
@@ -77,9 +186,42 @@ h2 {
   color: var(--accent);
 }
 
+/* ---------- Cards (home page shortcuts) ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 /* ---------- Experience and education entries ---------- */
 .entry {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .entry-head {
@@ -100,6 +242,10 @@ h2 {
   font-size: 0.95rem;
 }
 
+.entry p {
+  margin: 0.4rem 0 0;
+}
+
 .entry ul {
   margin: 0.5rem 0 0;
   padding-left: 1.25rem;
@@ -110,9 +256,13 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0;
+  margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+.entry ul.skills {
+  padding-left: 0;
 }
 
 .skills li {
@@ -123,17 +273,31 @@ h2 {
 }
 
 /* ---------- Footer ---------- */
-.footer {
-  margin-top: 2rem;
-  padding: 1.5rem 0 3rem;
+.site-footer {
+  max-width: var(--max-width);
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.25rem 3rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* ---------- Print: makes "Print to PDF" produce a clean CV ---------- */
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* ---------- Print: clean output when saving a page as PDF ---------- */
 @media print {
-  body { padding: 0; font-size: 11pt; }
-  .header { padding-top: 0; }
+  body { font-size: 11pt; }
+  .site-nav,
+  .no-print,
+  .button-row { display: none; }
   a { color: var(--text); }
 }
