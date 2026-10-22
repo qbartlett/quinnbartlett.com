@@ -301,3 +301,23 @@ h2 {
   .button-row { display: none; }
   a { color: var(--text); }
 }
+
+/* ---------- Grouped skills (resume page) ---------- */
+.skill-group {
+  margin-bottom: 1.25rem;
+}
+
+.skill-group h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.skill-group .skills {
+  margin-top: 0.5rem;
+}
+
+/* ---------- Education highlights ---------- */
+.entry .detail {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
