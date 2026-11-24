@@ -1,13 +1,15 @@
 /* ---------- Settings you can change easily ---------- */
 :root {
-  --text: #1f2933;          /* main text color */
-  --muted: #62707d;         /* secondary text (dates, subtitles) */
-  --accent: #2563eb;        /* links, buttons, headings accent */
-  --accent-dark: #1d4ed8;   /* button hover */
+  --text: #14202e;          /* main text color (deep ink) */
+  --muted: #5b6776;         /* secondary text (dates, subtitles) */
+  --accent: #1f3a5f;        /* navy: links, buttons, rules */
+  --accent-dark: #142a47;   /* button hover */
+  --highlight: #a8612f;     /* copper: small labels and nav underline */
   --background: #ffffff;    /* page background */
-  --surface: #f6f8fa;       /* card background */
-  --line: #e4e7eb;          /* thin divider lines */
-  --max-width: 760px;       /* how wide the content column is */
+  --surface: #f4f6f8;       /* panel background */
+  --line: #dde2e8;          /* thin divider lines */
+  --max-width: 780px;       /* how wide the content column is */
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
 }
 
 /* ---------- Base styles ---------- */
@@ -19,7 +21,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text);
   background: var(--background);
 }
@@ -55,7 +57,8 @@ h1, h2, h3 {
 
 .brand {
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
   color: var(--text);
 }
 
@@ -66,7 +69,7 @@ h1, h2, h3 {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
+  gap: 0.25rem 1.5rem;
 }
 
 .site-nav a {
@@ -83,7 +86,7 @@ h1, h2, h3 {
 /* The page you're currently on is highlighted */
 .site-nav a[aria-current="page"] {
   color: var(--text);
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--highlight);
 }
 
 /* ---------- Page layout ---------- */
@@ -95,7 +98,9 @@ h1, h2, h3 {
 
 .page-title {
   margin: 0 0 1rem;
-  font-size: 2rem;
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  letter-spacing: -0.01em;
 }
 
 .page-title-row {
@@ -121,22 +126,34 @@ h1, h2, h3 {
   padding: 3rem 0 2rem;
 }
 
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: center;
+}
+
 .eyebrow {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .hero h1 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
+  font-family: var(--serif);
   font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .hero .lead {
   max-width: 34rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
 }
 
 /* ---------- Buttons ---------- */
@@ -148,9 +165,9 @@ h1, h2, h3 {
 
 .button {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.25rem;
   border: 2px solid var(--accent);
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--accent);
   color: #ffffff;
   font-weight: 600;
@@ -181,42 +198,103 @@ section {
 h2 {
   margin: 0 0 1rem;
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--highlight);
 }
 
-/* ---------- Cards (home page shortcuts) ---------- */
-.cards {
+/* ---------- Home: what I do ---------- */
+.pillars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.card {
-  display: block;
-  padding: 1.25rem;
+.pillar {
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--accent);
+}
+
+.pillar h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.pillar p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* ---------- Home: featured work ---------- */
+.featured {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--surface);
+  overflow: hidden;
   color: var(--text);
 }
 
-.card:hover {
+.featured:hover {
   border-color: var(--accent);
   text-decoration: none;
 }
 
-.card h3 {
+.featured img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.featured-body {
+  padding: 1.5rem;
+}
+
+.featured-body h3 {
   margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  font-family: var(--serif);
+  font-size: 1.3rem;
   color: var(--accent);
 }
 
-.card p {
-  margin: 0;
+.featured-body p {
+  margin: 0 0 0.75rem;
   color: var(--muted);
-  font-size: 0.95rem;
+}
+
+.more {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Home: contact call to action ---------- */
+.cta {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface);
+}
+
+.cta h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+}
+
+.cta p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  max-width: 36rem;
 }
 
 /* ---------- Experience and education entries ---------- */
@@ -246,6 +324,11 @@ h2 {
   margin: 0.4rem 0 0;
 }
 
+.entry .detail {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
 .entry ul {
   margin: 0.5rem 0 0;
   padding-left: 1.25rem;
@@ -272,37 +355,6 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* ---------- Footer ---------- */
-.site-footer {
-  max-width: var(--max-width);
-  margin: 2rem auto 0;
-  padding: 1.5rem 1.25rem 3rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-/* ---------- Small screens ---------- */
-@media (max-width: 520px) {
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-}
-
-/* ---------- Print: clean output when saving a page as PDF ---------- */
-@media print {
-  body { font-size: 11pt; }
-  .site-nav,
-  .no-print,
-  .button-row { display: none; }
-  a { color: var(--text); }
-}
-
-/* ---------- Grouped skills (resume page) ---------- */
 .skill-group {
   margin-bottom: 1.25rem;
 }
@@ -314,12 +366,6 @@ h2 {
 
 .skill-group .skills {
   margin-top: 0.5rem;
-}
-
-/* ---------- Education highlights ---------- */
-.entry .detail {
-  color: var(--muted);
-  margin: 0.25rem 0 0;
 }
 
 /* ---------- Photos ---------- */
@@ -337,7 +383,7 @@ figcaption {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--surface);
 }
 
@@ -363,61 +409,8 @@ figcaption {
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 6px;
   background: var(--surface);
-}
-
-/* ---------- Home: hero with photo ---------- */
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-/* ---------- Home: featured work ---------- */
-.featured {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  overflow: hidden;
-  color: var(--text);
-}
-
-.featured:hover {
-  border-color: var(--accent);
-  text-decoration: none;
-}
-
-.featured img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-}
-
-.featured-body {
-  padding: 1.5rem;
-}
-
-.featured-body h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.25rem;
-  color: var(--accent);
-}
-
-.featured-body p {
-  margin: 0 0 0.75rem;
-  color: var(--muted);
-}
-
-.more {
-  font-weight: 600;
-  color: var(--accent);
 }
 
 /* ---------- About ---------- */
@@ -477,8 +470,10 @@ figcaption {
 
 .venture h2 {
   margin: 0;
-  font-size: 1.6rem;
-  letter-spacing: normal;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   text-transform: none;
   color: var(--text);
 }
@@ -503,12 +498,25 @@ figcaption {
   color: var(--text);
 }
 
-/* ---------- Footer extras ---------- */
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.25rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 .site-footer p + p {
   margin-top: 0.25rem;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Small screens ---------- */
 @media (max-width: 680px) {
   .hero-split {
     grid-template-columns: 1fr;
@@ -518,6 +526,14 @@ figcaption {
   .hero-photo {
     order: -1;
     max-width: 200px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
   }
 
   .featured {
@@ -532,4 +548,14 @@ figcaption {
   .about-photo {
     max-width: 200px;
   }
+}
+
+/* ---------- Print: clean output when saving a page as PDF ---------- */
+@media print {
+  body { font-size: 11pt; }
+  .site-nav,
+  .no-print,
+  .button-row,
+  .cta { display: none; }
+  a { color: var(--text); }
 }
