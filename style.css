@@ -559,3 +559,14 @@ figcaption {
   .cta { display: none; }
   a { color: var(--text); }
 }
+
+/* ---------- Gallery variants ---------- */
+/* Portrait photos keep a tall shape instead of being cropped to landscape */
+.gallery .tall img {
+  aspect-ratio: 3 / 4;
+}
+
+/* Keep the top of a tall photo (faces, helmets) in view when it is cropped */
+.gallery .focus-top img {
+  object-position: 50% 20%;
+}
